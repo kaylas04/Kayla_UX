@@ -748,10 +748,7 @@ export function OrigamiCaseStudy() {
           </div>
         </section>
 
-        {/* ── Blurred "Coming Soon" wrapper ───────────────────────── */}
-        <ComingSoonBlur>
-
-        {/* ── Competitor Research ─────────────────────────────────── */}
+        {/* ── Design Process ───────────────────────────────────────── */}
         <section
           className="py-28 md:py-36 relative overflow-hidden"
           style={{ backgroundColor: P.surface, borderTop: `0.5px solid ${P.rule}` }}
@@ -759,33 +756,56 @@ export function OrigamiCaseStudy() {
           <PaperGrain opacity={0.018} />
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12 md:px-24 relative z-10">
 
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 md:mb-20">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            {/* Section intro */}
+            <motion.div
+              className="mb-20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <SectionLabel>Design Process</SectionLabel>
+              <h2
+                className="font-serif leading-tight mt-4"
+                style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: P.ink }}
               >
-                <SectionLabel>Competitor Research</SectionLabel>
-                <h2
-                  className="font-serif leading-tight mt-4"
-                  style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: P.ink }}
-                >
-                  Dashboard<br />
-                  <span className="font-display italic" style={{ color: P.accent }}>research & mapping</span>
-                </h2>
-              </motion.div>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.9, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="font-sans text-sm leading-relaxed max-w-xs"
-                style={{ color: P.dim }}
-              >
-                Adjacent tools reviewed to understand how the industry handles live monitoring, post-run diagnosis, and workflow clarity for technical operators.
-              </motion.p>
-            </div>
+                Three explorations.<br />
+                <span className="font-display italic" style={{ color: P.accent }}>One evolving system.</span>
+              </h2>
+            </motion.div>
+
+            {/* Page 1 — Dashboard Exploration */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>01</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  Dashboard Exploration
+                </h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>Understanding what works.</p>
+              </div>
+              <div className="md:w-1/2 flex items-center">
+                <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>
+                  We studied existing systems, mapped patterns, and identified what supports clarity, control, and usability.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Research image */}
+            <motion.div
+              className="mt-10 mb-16"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <img src="/images/research.png" alt="Research" className="w-full block" draggable={false} />
+            </motion.div>
 
             {/* Axis labels */}
             <motion.div
@@ -981,43 +1001,178 @@ export function OrigamiCaseStudy() {
                 ))}
               </div>
             </motion.div>
-          </div>
-        </section>
 
-        {/* ── Onboarding ──────────────────────────────────────────── */}
-        <section
-          className="py-28 md:py-36 relative overflow-hidden"
-          style={{ borderTop: `0.5px solid ${P.rule}` }}
-        >
-          <PaperGrain opacity={0.018} />
-          <div className="max-w-[1200px] mx-auto px-6 sm:px-12 md:px-24 relative z-10">
+            {/* Page 2 — Competitive Analysis */}
+            <AnimRule />
             <motion.div
-              className="mb-14"
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              <SectionLabel>Onboarding</SectionLabel>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                <h2
-                  className="font-serif text-3xl md:text-4xl leading-tight tracking-tight"
-                  style={{ color: P.ink }}
-                >
-                  A five-step setup<br />
-                  <span className="font-display italic" style={{ color: P.accent }}>wizard</span>
-                </h2>
-                <div className="flex flex-col gap-4">
-                  <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>
-                    We designed a setup wizard that walks users through five sequential steps — from unboxing to a fully calibrated, ready-to-use robotic hand — with no prior technical knowledge required.
-                  </p>
-                </div>
+              <div className="md:w-1/2 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Competitive Analysis</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  Patterns we observed.
+                </h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>What works. What breaks.</p>
+              </div>
+              <div className="md:w-1/2 flex items-center" />
+            </motion.div>
+            <motion.img
+              src="/images/Frame 2147237188.png"
+              alt="Competitive analysis"
+              className="w-full block"
+              draggable={false}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            />
+
+            {/* Page 3 — Workflow */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/3 flex items-center" />
+              <div className="md:w-2/3 flex flex-col gap-2 md:text-right">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Workflow Mapping</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  Breaking down the system.
+                </h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>From signals to actions.</p>
               </div>
             </motion.div>
+            <motion.img
+              src="/images/image 2065419444.png"
+              alt="Workflow mapping"
+              className="w-full block"
+              draggable={false}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            />
 
-            <AnimRule />
+            {/* Page 4 — Interface Study */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Interface Study</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  Borrowing familiar patterns.
+                </h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>Sidebar. Canvas. Inspector.</p>
+              </div>
+              <div className="md:w-1/2 flex items-center" />
+            </motion.div>
+            <div
+              className="flex justify-end overflow-visible"
+              style={{ marginRight: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))' }}
+            >
+              <div className="flex flex-col items-center" style={{ width: '72vw', maxWidth: 'none' }}>
+                <motion.img
+                  src="/images/Frame 2147237191.png"
+                  alt="Interface study reference A"
+                  className="block w-full"
+                  draggable={false}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                />
+                {/* Vertical connector */}
+                <div className="relative w-full flex justify-center py-8">
+                  <div style={{ width: '1px', height: '100%', position: 'absolute', top: 0, bottom: 0, background: P.rule }} />
+                </div>
+                <motion.img
+                  src="/images/Frame 2147237190.png"
+                  alt="Borrowing familiar patterns"
+                  className="block w-full"
+                  draggable={false}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+                />
+              </div>
+            </div>
+
+            {/* Page 5 — Interaction References */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-2/3 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Interaction References</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  From inspiration to adaptation.
+                </h3>
+                <p className="font-sans text-base leading-relaxed mt-2" style={{ color: P.body }}>Rather than using a fixed linear flow, we used a vertical sidebar to make progress visible, support step-by-step guidance, and allow the onboarding flow to scale as the system grows.</p>
+              </div>
+              <div className="md:w-1/3 flex items-center" />
+            </motion.div>
+            <motion.img
+              src="/images/Frame 2147237192.png"
+              alt="From inspiration to adaptation"
+              className="w-full block"
+              draggable={false}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            />
+
+            {/* Page 6 — AI in Process */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/3 flex items-center" />
+              <div className="md:w-2/3 flex flex-col gap-2 md:text-right">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>AI in Process</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  Iterating through prompts.
+                </h3>
+                <p className="font-sans text-base leading-relaxed mt-2" style={{ color: P.body }}>It was a useful tool for generating ideas around error states, low-fi designs, and messaging, which allowed us to explore a wide variety of options before converging on the best-fit solution.</p>
+              </div>
+            </motion.div>
+            <div style={{
+              marginLeft: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))',
+              marginRight: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))',
+              overflow: 'hidden',
+            }}>
+              <motion.img
+                src="/images/Frame 2147237193.png"
+                alt="Iterating through prompts"
+                className="w-full block"
+                draggable={false}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              />
+            </div>
+
           </div>
         </section>
+
 
         {/* ── Playground ──────────────────────────────────────────── */}
         <section
@@ -1027,106 +1182,304 @@ export function OrigamiCaseStudy() {
           <PaperGrain opacity={0.022} />
           <GridLines />
           <div className="max-w-[1200px] mx-auto px-6 sm:px-12 md:px-24 relative z-10">
+
+            {/* Page 1 — Playground intro */}
             <motion.div
-              className="mb-14"
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mb-14"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              <SectionLabel>Playground</SectionLabel>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
-                <h2
-                  className="font-serif text-3xl md:text-4xl leading-tight tracking-tight"
-                  style={{ color: P.ink }}
-                >
-                  Designed for<br />
-                  <span className="font-display italic" style={{ color: P.accent }}>live interactivity</span>
-                </h2>
-                <div className="flex flex-col gap-4">
-                  <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>
-                    The playground was not a static design problem — it required real, live interactivity. Users needed to feel how the hand responds, not just see what it looks like. That shaped every UX decision we made.
-                  </p>
-                  <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>
-                    We drew inspiration from Adobe After Effects, Photoshop, and Blender — all tools that use controls to manipulate another object, and all of which follow the same core layout: Sidebar, Canvas, Inspector. A key UX principle guided us: people spend more time on other applications than yours, so match their existing mental models.
-                  </p>
-                  <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>
-                    AI was used to brainstorm interaction methods before implementation — we asked Claude for suggestions, evaluated them from a UX perspective, and then intentionally selected the ones that made the most sense rather than just shipping what was easiest to generate.
-                  </p>
-                </div>
+              <div className="md:w-1/2 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>02</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>
+                  Playground Design
+                </h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>Designing live interaction.</p>
+              </div>
+              <div className="md:w-1/2 flex items-center">
+                <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>
+                  We translated research into an interactive control model, balancing precision, flexibility, and ease of use.
+                </p>
               </div>
             </motion.div>
 
-            <AnimRule />
-
-            {/* Full UI annotated */}
             <motion.div
-              className="mt-14"
+              className="mt-10"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              <ImgPlaceholder label="IMAGE: Full playground UI annotated — Presets, Hand Canvas, Sequences, Joint Angles, System Status, Toolbar" aspect="aspect-[16/9]" />
+              <video src="/videos/inter.mov" autoPlay loop muted playsInline className="w-full block" />
             </motion.div>
 
-            {/* Feature breakdown */}
-            <div className="mt-14 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
-              <motion.div
-                className="md:col-span-5 flex flex-col gap-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <h3 className="font-serif text-2xl leading-tight tracking-tight" style={{ color: P.ink }}>
-                  Key features
-                </h3>
-                <div className="flex flex-col gap-5">
-                  {[
-                    { title: "Hand Canvas", body: "Click+drag or scroll to adjust individual joints. The central interaction surface." },
-                    { title: "Presets", body: "One-click poses: Open, Fist, Pinch, Point — plus custom configurations the user can save." },
-                    { title: "Sequences", body: "String a series of poses into movement scripts — useful for gripping, lifting, and placing workflows." },
-                    { title: "Joint Angles Inspector", body: "Dropdown per finger for precise numeric control. Housed in collapsible menus to prevent cognitive overload." },
-                    { title: "Keyboard Controls", body: "Q W E R T mapped to fingers; number keys for joints. An accessibility-forward alternative to mouse manipulation." },
-                  ].map((item) => (
-                    <div key={item.title} className="flex gap-4">
-                      <div className="w-px shrink-0 mt-1" style={{ backgroundColor: P.accent, minHeight: "1.2em" }} />
-                      <div>
-                        <p className="font-sans text-sm font-medium mb-0.5" style={{ color: P.ink }}>{item.title}</p>
-                        <p className="font-sans text-sm leading-relaxed font-light" style={{ color: P.body }}>{item.body}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="md:col-span-7 flex flex-col gap-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <ImgPlaceholder label="IMAGE: Interaction methods — 4 panel breakdown" aspect="aspect-[4/3]" />
-                <ImgPlaceholder label="IMAGE: Keyboard controls panel" aspect="aspect-[16/7]" />
-              </motion.div>
-            </div>
-
-            {/* Vibe-coded prototype */}
+            {/* Page 2 — Layout Model (LEFT) */}
             <motion.div
-              className="mt-14 flex flex-col gap-4"
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Layout Model</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>A familiar structure.</h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>Sidebar. Canvas. Inspector.</p>
+              </div>
+              <div className="md:w-1/2 flex items-center" />
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col items-center w-full"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              variants={{ visible: { transition: { staggerChildren: 0.4 } } }}
+            >
+              {/* Image 1 */}
+              <motion.img
+                src="/images/image 2065419405.png"
+                alt="Layout model"
+                className="w-full block"
+                draggable={false}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                }}
+              />
+              {/* Connector line 1 */}
+              <motion.div
+                style={{ width: '1px', height: '48px', background: P.rule, transformOrigin: 'top' }}
+                variants={{
+                  hidden: { scaleY: 0 },
+                  visible: { scaleY: 1, transition: { duration: 0.4, ease: "easeInOut" } }
+                }}
+              />
+              {/* Image 2 */}
+              <motion.img
+                src="/images/image 13.png"
+                alt="Layout model detail"
+                className="w-full block"
+                draggable={false}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                }}
+              />
+              {/* Connector line 2 */}
+              <motion.div
+                style={{ width: '1px', height: '48px', background: P.rule, transformOrigin: 'top' }}
+                variants={{
+                  hidden: { scaleY: 0 },
+                  visible: { scaleY: 1, transition: { duration: 0.4, ease: "easeInOut" } }
+                }}
+              />
+              {/* Image 3 */}
+              <motion.img
+                src="/images/Frame 2147237194.png"
+                alt="Layout model final"
+                className="w-full block"
+                draggable={false}
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                }}
+              />
+            </motion.div>
+
+            {/* Page 3 — Hand Manipulation (RIGHT) */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex items-center" />
+              <div className="md:w-1/2 flex flex-col gap-2 md:text-right">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Direct Control</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>Manipulating the hand.</h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>From joints to gestures.</p>
+              </div>
+            </motion.div>
+
+            <motion.img
+              src="/images/Frame 2147237195.png"
+              alt="Manipulating the hand"
+              className="w-full block"
+              draggable={false}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              style={{ borderTop: `0.5px solid ${P.rule}`, paddingTop: "3.5rem" }}
+            />
+
+            {/* Page 4 — Input Models (LEFT) */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="font-sans text-[9px] uppercase tracking-[0.3em]" style={{ color: P.dim }}>
-                Vibe-coded prototype
-              </span>
-              <ImgPlaceholder label="VIDEO: Vibe-coded interactive prototype demo" aspect="aspect-[16/9]" />
+              <div className="md:w-2/3 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Input Models</span>
+                <h3 className="font-serif leading-tight" style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.5rem)", color: P.ink }}>Multiple ways to interact.</h3>
+                <p className="font-sans text-base leading-relaxed mt-2" style={{ color: P.body }}>Is manual control too slow? Founder feedback and five usability tests revealed the need for faster, more intuitive interaction.</p>
+              </div>
+              <div className="md:w-1/3 flex items-center" />
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <video src="/videos/contro_1.mov" autoPlay loop muted playsInline className="w-full block" style={{ border: 'none', outline: 'none' }} />
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mt-10"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div
+                className="flex-shrink-0 w-full md:w-[38%]"
+                style={{ marginLeft: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))' }}
+              >
+                <img src="/images/keyboard controls.png" alt="Keyboard controls" className="block" style={{ width: '70%' }} draggable={false} />
+              </div>
+              <p className="font-sans text-base leading-relaxed md:w-[62%]" style={{ color: P.body }}>
+                We design use keyboard shortcuts to select fingers and joints for faster, more efficient control.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 mt-4"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <p className="font-sans text-base leading-relaxed md:w-[62%]" style={{ color: P.body }}>
+                Not immediately intuitive? We designed a manual to make the controls learnable and discoverable.
+              </p>
+              <div
+                className="flex-shrink-0 w-full md:w-[55%] flex justify-end"
+                style={{ marginRight: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))' }}
+              >
+                <img src="/images/Frame.png" alt="Controls manual" className="block" style={{ width: '100%' }} draggable={false} />
+              </div>
+            </motion.div>
+
+            {/* Page 5 — Presets (RIGHT) */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex items-center" />
+              <div className="md:w-1/2 flex flex-col gap-2 md:text-right">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Preset System</span>
+                <h3 className="font-serif leading-tight whitespace-nowrap" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: P.ink }}>Reusable hand positions.</h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>From common poses to custom grips.</p>
+              </div>
+            </motion.div>
+
+            {/* Preset — preset.mov left-bleed, text right */}
+            <motion.div
+              className="flex flex-col md:flex-row items-center gap-8 md:gap-12 mt-10"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div
+                className="flex-shrink-0 w-full md:w-[67%]"
+                style={{ marginLeft: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))' }}
+              >
+                <video src="/videos/preset.mov" autoPlay loop muted playsInline className="w-full block" style={{ border: 'none', outline: 'none' }} />
+              </div>
+              <div className="flex flex-col gap-2 md:w-[33%]">
+                <p className="font-sans text-base font-medium leading-snug" style={{ color: P.ink }}>Repeated task? Save the pose.</p>
+                <p className="font-sans text-base leading-relaxed" style={{ color: P.body }}>Custom presets let users store and reuse specific grip configurations.</p>
+              </div>
+            </motion.div>
+
+            {/* Preset — preset_1.mov right-bleed, text left */}
+            <motion.div
+              className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 mt-4"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              style={{ marginRight: 'calc(-6rem - max(0px, (100vw - 1200px) / 2))' }}
+            >
+              <p className="flex-shrink-0 font-sans text-base leading-relaxed md:w-[33%]" style={{ color: P.body }}>
+                …now you can return to complex hand positions without rebuilding them.
+              </p>
+              <video src="/videos/preset_1.mov" autoPlay loop muted playsInline className="flex-1 min-w-0 block" style={{ border: 'none', outline: 'none' }} />
+            </motion.div>
+
+            {/* Page 6 — Sequences (LEFT) */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex flex-col gap-2">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Precision Controls</span>
+                <h3 className="font-serif leading-tight whitespace-nowrap" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: P.ink }}>Fine-tuning movement.</h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>Control at the joint level.</p>
+              </div>
+              <div className="md:w-1/2 flex items-center" />
+            </motion.div>
+
+            {/* angle.mov — full width below Precision Controls */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <video src="/videos/angle.mov" autoPlay loop muted playsInline className="w-full block" style={{ border: 'none', outline: 'none' }} />
+            </motion.div>
+
+            {/* Page 7 — Interface Simplification (RIGHT) */}
+            <motion.div
+              className="flex flex-col md:flex-row gap-8 md:gap-16 mt-16 mb-14"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <div className="md:w-1/2 flex items-center" />
+              <div className="md:w-1/2 flex flex-col gap-2 md:text-right">
+                <span className="font-sans text-[10px] uppercase tracking-[0.3em]" style={{ color: P.accent }}>Interface Simplification</span>
+                <h3 className="font-serif leading-tight whitespace-nowrap" style={{ fontSize: "clamp(1.5rem, 3vw, 2.5rem)", color: P.ink }}>Reducing cognitive load.</h3>
+                <p className="font-display italic text-lg" style={{ color: P.accent }}>Complexity made approachable.</p>
+              </div>
+            </motion.div>
+
+            {/* ref.mov — full width below Interface Simplification */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <video src="/videos/ref.mov" autoPlay loop muted playsInline className="w-full block" style={{ border: 'none', outline: 'none' }} />
+            </motion.div>
+
           </div>
         </section>
 
@@ -1488,8 +1841,6 @@ export function OrigamiCaseStudy() {
             </Link>
           </div>
         </section>
-
-        </ComingSoonBlur>
 
         <Footer />
       </div>

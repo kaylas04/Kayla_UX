@@ -28,7 +28,7 @@ const featuredProjects = [
     id: "origami-robotics",
     title: "Origami Robotics",
     description: "A product design project spanning both a public-facing website and an internal engineering dashboard, built to communicate complex manipulation systems with greater clarity, credibility, and usability.",
-    image: "/images/origami_preview.png",
+    image: "/images/Frame 464.png",
     tags: ["PRODUCT DESIGN", "SYSTEM EXPERIENCE"],
     link: "/project/origami-robotics",
     objectFit: "cover" as const,
