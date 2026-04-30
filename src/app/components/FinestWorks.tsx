@@ -7,21 +7,21 @@ const finestProjects = [
     title: "Flexi",
     subtitle: "Cal Hacks 11.0",
     tags: ["Hackathon", "UX Design", "Mobile App"],
-    image: "/images/flexi.png",
+    image: "/images/Hand and iPhone 16 Pro.png",
   },
   {
     id: "teachtech",
     title: "TeachTech",
     subtitle: "Challenge Lab",
     tags: ["EdTech", "Product Design", "Research"],
-    image: "/images/teach_tech.png",
+    image: "/images/R-mockups, MacBook Air (15 inch).png",
   },
   {
     id: "recyclehub",
     title: "RecycleHub",
     subtitle: "HackDavis 2024",
     tags: ["Hackathon", "Sustainability", "Mobile App"],
-    image: "/images/re.png",
+    image: "/images/Frame 461.png",
   },
   {
     id: "cloudrush",
@@ -64,11 +64,6 @@ function ProjectCard({ project }: { project: typeof finestProjects[0] }) {
           alt={project.title}
           className="absolute inset-0 w-full h-full object-contain"
           draggable={false}
-        />
-        {/* Edge blend — inset shadow paints bg colour over all 4 edges */}
-        <div
-          className="absolute inset-0 pointer-events-none rounded-[2rem]"
-          style={{ boxShadow: "inset 0 0 48px 28px #f0f0f5" }}
         />
       </div>
 
