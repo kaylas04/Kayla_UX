@@ -28,14 +28,16 @@ const finestProjects = [
     title: "CloudRush",
     subtitle: "Class Project",
     tags: ["UX Design", "Web App"],
-    image: "/images/cloud_rush.png",
+    image: "/images/Frame 466.png",
+    scale: 1.15,
   },
   {
     id: "cartology",
     title: "Cartology",
     subtitle: "Class Project",
     tags: ["Data Viz", "UX Research"],
-    image: "/images/cartology.png",
+    image: "/images/cart.png",
+    scale: 1.2,
   },
 ];
 
@@ -63,6 +65,7 @@ function ProjectCard({ project }: { project: typeof finestProjects[0] }) {
           src={project.image}
           alt={project.title}
           className="absolute inset-0 w-full h-full object-contain"
+          style={'scale' in project ? { transform: `scale(${project.scale})` } : undefined}
           draggable={false}
         />
       </div>
